@@ -3,7 +3,17 @@ package br.com.alura.mvc.mudi.model;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity // Indica que a classe representa uma tabela no banco de dados
 public class Pedido {
+
+  @Id // Indica que a variavel é um id
+  @GeneratedValue(strategy = GenerationType.IDENTITY) // Indica que ira gerar o Id automaticamente
+  private Long id;
 
   private String nomeProduto;
   private BigDecimal valorNegociado;
@@ -11,6 +21,17 @@ public class Pedido {
   private String urlImagem;
   private String urlProduto;
   private String descricao;
+
+  public Pedido() {
+  }
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
 
   public String getUrlImagem() {
     return urlImagem;
