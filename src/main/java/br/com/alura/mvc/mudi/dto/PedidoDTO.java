@@ -1,12 +1,17 @@
 package br.com.alura.mvc.mudi.dto;
 
+import javax.validation.constraints.NotBlank;
+
 import br.com.alura.mvc.mudi.model.Pedido;
 
 public class PedidoDTO {
 
   // Os nomes das variaveis devem ter o mesmo nome do input do formulario html
+  @NotBlank // Valida se o campo não é nulo e nem vazio, ou seja, so um espaço em branco
   private String nomeProduto;
+  @NotBlank
   private String urlImagem;
+  @NotBlank
   private String urlProduto;
   private String descricao;
 
