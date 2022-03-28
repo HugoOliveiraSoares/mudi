@@ -11,17 +11,17 @@ import br.com.alura.mvc.mudi.repository.PedidoRepository;
 @Controller
 public class HomeController {
 
-  @Autowired
-  PedidoRepository pedidoRepository;
+  @Autowired // Solicita ao Springboot uma instancia de PedidoRepository
+  private PedidoRepository pedidoRepository;
 
-  @GetMapping("/home") // Direciona para a pagina home
+  @GetMapping("/home") // Define a rota da pagina
   public String home(Model model) {
 
-    List<Pedido> pedidos = pedidoRepository.findAll();
+    List<Pedido> pedidos = pedidoRepository.findAll(); // Busca todos os pedidos
 
     model.addAttribute("pedidos", pedidos); // Envia informações para a view (frontend)
 
-    return "home";
+    return "home"; // Direciona para a pagina home.html
 
   }
 

@@ -17,12 +17,12 @@ import br.com.alura.mvc.mudi.repository.PedidoRepository;
 @RequestMapping("/pedido") // cria a rota pedido
 public class PedidoController {
 
-  @Autowired
+  @Autowired // Solicita ao Springboot uma instancia de PedidoRepository
   private PedidoRepository pedidoRepository;
 
-  @GetMapping("/formulario") // Direciona para a pagina formulario
+  @GetMapping("/formulario") // Define a rota da pagina
   public String formulario(PedidoDTO pedidoDTO) {
-    return "pedido/formulario";
+    return "pedido/formulario"; // Direciona para a pagina formulario
 
   }
 
