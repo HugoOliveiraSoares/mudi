@@ -14,7 +14,7 @@ public class HomeController {
   @Autowired
   PedidoRepository pedidoRepository;
 
-  @GetMapping("/home")
+  @GetMapping("/home") // Direciona para a pagina home
   public String home(Model model) {
 
     List<Pedido> pedidos = pedidoRepository.findAll();

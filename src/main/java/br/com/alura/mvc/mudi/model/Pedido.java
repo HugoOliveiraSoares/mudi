@@ -25,6 +25,15 @@ public class Pedido {
   public Pedido() {
   }
 
+  public Pedido(String nomeProduto, String urlImagem,
+      String urlProduto, String descricao) {
+
+    this.nomeProduto = nomeProduto;
+    this.urlImagem = urlImagem;
+    this.urlProduto = urlProduto;
+    this.descricao = descricao;
+  }
+
   public Long getId() {
     return id;
   }
