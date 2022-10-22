@@ -1,0 +1,26 @@
+# usu√°rio e senha de conex„o com o banco de dados
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost/pedidos?createDatabaseIfNotExist=true&serverTimezone=UTC
+# JPA
+  jpa:
+    properties:hibernate:dialect: org.hibernate.dialect.MySQL8Dialect
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate.ddl-auto: update
+    properties:hibernate,jdbc.lob.non_contextual_creation: true
+
+# Actuator
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: 'health,prometheus'
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+    prometheus:
+      enabled: true
